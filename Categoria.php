@@ -1,18 +1,16 @@
 <?php
 
-//require_once __DIR__ . '/Prodotto.php';
+require_once __DIR__ . '/Prodotto.php';
 
-class Categoria 
+class Categoria
 {
-    public $cani;
-    public $gatti;
+    public $categoria;
 
-    public function __construct($cani, $gatti)
+    public function __construct($categoria)
     {
-        $this->cani = $cani;
-        $this->gatti = $gatti;
+        $this->categoria = $categoria;
     }
 }
 
-$categoria = new Categoria('Cane', 'Gatto');
-var_dump($categoria);
+$cani = new Categoria('Cane');
+$gatti = new Categoria('Gatto');

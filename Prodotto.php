@@ -14,8 +14,20 @@ class Prodotto extends Categoria
         $this->gioco = $gioco;
         $this->cuccia = $cuccia;
     }
+
+    /*public function getHTMLCard()
+    {
+        return "
+        <div>
+        <h2>$this->categoria</h2>
+        <ul>
+            <li>Cibo: $this->cibo</li>
+            <li>Gioco: $this->gioco</li>
+            <li>Cuccia: $this->cuccia</li>
+        </ul>
+        ";
+    }*/
 }
 
-$categoria->cani = new Prodotto('Scatoletta', 'Pallina', 'Casetta');
-$categoria->gatti = new Prodotto('Scatoletta', 'Pallina', 'Casetta');
-
+$cani = new Prodotto('Scatoletta', 'Osso', 'Casetta');
+$gatti = new Prodotto('Croccantini', 'Pallina', 'Cuscino');
