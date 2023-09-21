@@ -2,13 +2,17 @@
 
 require_once __DIR__ . '/Prodotto.php';
 require_once __DIR__ . '/Categoria.php';
-
-$cani = new Categoria('Cane');
-$gatti = new Categoria('Gatto');
+require_once __DIR__ . '/Cibo.php';
+require_once __DIR__ . '/Gioco.php';
+require_once __DIR__ . '/Cuccia.php';
 
 $prodotti = [
-    new Prodotto('Scatoletta', 'Osso', 'Casetta', $cani),
-    new Prodotto('Croccantini', 'Pallina', 'Cuscino', $gatti)
+    new Cibo('Immagine', 'Nome', 'Prezzo', new Categoria('Cane')),
+    new Gioco('Immagine', 'Nome', 'Prezzo', new Categoria('Cane')),
+    new Cuccia('Immagine', 'Nome', 'Prezzo', new Categoria('Cane')),
+    new Cibo('Immagine', 'Nome', 'Prezzo', new Categoria('Gatto')),
+    new Gioco('Immagine', 'Nome', 'Prezzo', new Categoria('Gatto')),
+    new Cuccia('Immagine', 'Nome', 'Prezzo', new Categoria('Gatto'))
 ]
 
 ?>
@@ -25,18 +29,18 @@ $prodotti = [
 <body>
     <?php
     foreach ($prodotti as $prodotto) {
-        $prodottoCibo = $prodotto->cibo;
-        $prodottoGioco = $prodotto->gioco;
-        $prodottoCuccia = $prodotto->cuccia;
+        $prodottoImmagine = $prodotto->immagine;
+        $prodottoNome = $prodotto->nome;
+        $prodottoPrezzo = $prodotto->prezzo;
         $prodottoCategoria = $prodotto->categoria->titolo;
 
         var_dump($prodotti);
 
         echo "<ul>
+        <li>$prodottoImmagine</li>
+        <li>$prodottoNome</li>
+        <li>$prodottoPrezzo</li>
         <li>$prodottoCategoria</li>
-        <li>$prodottoCibo</li>
-        <li>$prodottoGioco</li>
-        <li>$prodottoCuccia</li>
         </ul>";
     }
     ?>

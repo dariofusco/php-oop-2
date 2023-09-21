@@ -4,19 +4,16 @@ require_once __DIR__ . '/Categoria.php';
 
 class Prodotto
 {
-    public $cibo;
-    public $gioco;
-    public $cuccia;
+    public $immagine;
+    public $nome;
+    public $prezzo;
     public $categoria;
 
-    public function __construct($cibo, $gioco, $cuccia, Categoria $categoria)
+    public function __construct($immagine, $nome, $prezzo, Categoria $categoria)
     {
-        $this->cibo = $cibo;
-        $this->gioco = $gioco;
-        $this->cuccia = $cuccia;
+        $this->immagine = $immagine;
+        $this->nome = $nome;
+        $this->prezzo = $prezzo;
         $this->categoria = $categoria;
     }
 }
-
-
-

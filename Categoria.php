@@ -1,7 +1,5 @@
 <?php
 
-//require_once __DIR__ . '/Prodotto.php';
-
 class Categoria
 {
     public $titolo;
@@ -11,5 +9,3 @@ class Categoria
         $this->titolo = $titolo;
     }
 }
-
-
