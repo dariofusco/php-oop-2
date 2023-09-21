@@ -2,13 +2,14 @@
 
 require_once __DIR__ . '/Categoria.php';
 
-class Prodotto extends Categoria
+class Prodotto
 {
     public $cibo;
     public $gioco;
     public $cuccia;
+    public $categoria;
 
-    public function __construct($cibo, $gioco, $cuccia, $categoria)
+    public function __construct($cibo, $gioco, $cuccia, Categoria $categoria)
     {
         $this->cibo = $cibo;
         $this->gioco = $gioco;
@@ -17,5 +18,5 @@ class Prodotto extends Categoria
     }
 }
 
-$prodotto1 = new Prodotto('Scatoletta', 'Osso', 'Casetta', $cani);
-$prodotto2 = new Prodotto('Croccantini', 'Pallina', 'Cuscino', $gatti);
+
+
