@@ -15,5 +15,10 @@ class Prodotto
         $this->nome = $nome;
         $this->prezzo = $prezzo;
         $this->categoria = $categoria;
+
+        if (!is_numeric($prezzo)) {
+            throw new Exception('Prezzo non valido');
+        }
+        return $prezzo;
     }
 }
