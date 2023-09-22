@@ -8,13 +8,13 @@ require_once __DIR__ . '/Cuccia.php';
 
 
 $prodotti = [
-    new Cibo('https://www.foodpet.it/wp-content/uploads/2022/02/luscious_lamb_pork_2160x.jpg', 'Cibo per cani', '10', new Categoria('Cane')),
-    new Gioco('https://www.rioparty.it/32388-large_default/gioco-da-masticare-per-cani-spazzolino-in-gomma.jpg', 'Gioco per cani', '15', new Categoria('Cane')),
-    new Cuccia('https://croci.net/wp-content/uploads/2020/09/Cuccia_per_cani_Chalet.jpg', 'Cuccia per cani', '30', new Categoria('Cane')),
-    new Cibo('https://iperverde.it/cdn/shop/products/cibo-umido-gatto-sheba-selezione-in-salsa-85-gr-vitello-tacchino.jpg?v=1634725379', 'Cibo per gatti', '20', new Categoria('Gatto')),
-    new Gioco('https://www.tradeshopitalia.com/16651-large_default/gioco-per-gatto-gatti-asta-con-pupazzo-topo-topolino-palestra-tiragraffi-unghie.jpg', 'Gioco per gatti', '25', new Categoria('Gatto')),
-    new Cuccia('https://www.tradeshopitalia.com/134563-large_default/cuccia-per-gatti-universale-a-meta-chiuso-con-morbido-cuscino-interno-tgm.jpg', 'Cuccia per gatti', '10', new Categoria('Gatto'))
-]
+    new Cibo('https://www.foodpet.it/wp-content/uploads/2022/02/luscious_lamb_pork_2160x.jpg', 'Cibo per cani', 10, new Categoria('Cane'), 10),
+    new Gioco('https://www.rioparty.it/32388-large_default/gioco-da-masticare-per-cani-spazzolino-in-gomma.jpg', 'Gioco per cani', 15, new Categoria('Cane'), 10),
+    new Cuccia('https://croci.net/wp-content/uploads/2020/09/Cuccia_per_cani_Chalet.jpg', 'Cuccia per cani', 30, new Categoria('Cane'), 10),
+    new Cibo('https://iperverde.it/cdn/shop/products/cibo-umido-gatto-sheba-selezione-in-salsa-85-gr-vitello-tacchino.jpg?v=1634725379', 'Cibo per gatti', 20, new Categoria('Gatto'), 10),
+    new Gioco('https://www.tradeshopitalia.com/16651-large_default/gioco-per-gatto-gatti-asta-con-pupazzo-topo-topolino-palestra-tiragraffi-unghie.jpg', 'Gioco per gatti', 25, new Categoria('Gatto'), 10),
+    new Cuccia('https://www.tradeshopitalia.com/134563-large_default/cuccia-per-gatti-universale-a-meta-chiuso-con-morbido-cuscino-interno-tgm.jpg', 'Cuccia per gatti', '10', new Categoria('Gatto'), 10)
+    ]
 
 ?>
 
@@ -38,13 +38,15 @@ $prodotti = [
                 $prodottoNome = $prodotto->nome;
                 $prodottoPrezzo = $prodotto->prezzo;
                 $prodottoCategoria = $prodotto->categoria->titolo;
-                var_dump($prodotto);
+                $prodottoSconto = $prodotto->sconto;
+
                 echo "<div class=\"card\" style=\"width: 18rem;\">
                     <img src=\"$prodottoImmagine\" class=\"card-img-top\" alt=\"\">
                     <div class=\"card-body\">
                     <ul>
                     <li>Nome: $prodottoNome</li>
                     <li>Prezzo: $prodottoPrezzo €</li>
+                    <li>Sconto: $prodottoSconto %</li>
                     <li>Categoria: $prodottoCategoria</li>
                     </ul>
                     </div>
